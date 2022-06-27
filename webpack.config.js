@@ -4,7 +4,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
     // 引入自动清除dist文件夹下的文件的插件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// 配置出入口
+// // 引入vue-loader插件
+// const { VueLoaderPlugin } = require('vue-loader')
+// webpack.config.js
+const { VueLoaderPlugin } = require('vue-loader')
+    // 配置出入口
 module.exports = {
     module: { // loader 加载器 配置在这儿
         rules: [ // loader的规则
@@ -39,7 +43,22 @@ module.exports = {
                 generator: {
                     filename: 'font-[name].[hash:6][ext]'
                 }
-            }
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'] // 预设:转码规则(用bable开发环境本来预设的)
+                    }
+                }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+
         ]
     },
     mode: 'development',
@@ -57,8 +76,11 @@ module.exports = {
             template: './public/index.html', // 告诉webpack使用插件时, 以我们自己的html文件作为模板去生成dist/html文件
             filename: 'index.html' // 生成文件的名称
         }),
-        new CleanWebpackPlugin() // 删除的是ouput path 里配置的那个输出文件的文件夹
+        new CleanWebpackPlugin(),
+        // 删除的是ouput path 里配置的那个输出文件的文件夹
         // 默认情况下dist
+        // 请确保引入这个插件！
+        new VueLoaderPlugin()
     ],
     devServer: {
         port: 3000, //设置自定义 端口号

@@ -8,6 +8,8 @@
 // 在index.js中引入banner.js和tabs.js
 import './banner'
 import './tab'
+// 引入vue文件
+import './app.vue'
 // 引入jquery.js中暴露的对象$/jquery
 import $ from 'jquery'
 // <!-- 需求1：在基本使用的例子中，引入jq,利用jq 给轮播图div添加给背景颜色 -->
@@ -17,12 +19,19 @@ import './styles/index.css'
 // index.js
 import imgUrl from './assets/assets/1.gif';
 // 引入字体图标文件
-import './assets/fonts/iconfont.css'
+import '../src/assets/assets/fonts/iconfont.css'
+// 引入vue文件
 let img = document.createElement('img');
 img.src = imgUrl;
 document.body.appendChild(img);
-// 引入less文件
-// import './styles/index.less'
+// 使用高级语法
+class App {
+    static a = 123
+}
+
+console.log(App.a)
+    // 引入less文件
+    // import './styles/index.less'
 
 // 需求2：设置webpack-入口和出口
 
