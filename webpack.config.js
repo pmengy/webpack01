@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/main.js', // 入口
   output: {
     path: path.resolve(__dirname, 'lib'), // 出口路径 绝对路径
@@ -18,6 +19,10 @@ module.exports = {
     new CleanWebpackPlugin(), // 删除的是ouput path 里配置的那个输出文件的文件夹
     // 默认情况下dist
   ],
+  devServer: {
+    // port: 3000, // 端口号
+    open: true
+  },
 };
 // __dirname 可以用来动态获取当前文件所属目录的绝对路径
 // /Users/maohuihui/Desktop/vue-base/code/day_01/03_webpack配置_修改入口和出口
