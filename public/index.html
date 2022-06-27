@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
-    
+    <div id="swiper">轮播图</div>
+    <div>tabs标签页</div>
 </body>
-</html>
+<!-- 将引入的js文件改为打包完成后的dist/main.js -->
+<script src="../src/main.js"></script>
+<!-- 报错：Uncaught SyntaxError: Cannot use import statement outside a module (at index.js:10:1 -->
+<!-- 表示不能识别模块化导入，需要用到webpack打包工具 -->
+
+
+
+<!-- 存在问题：需要在index.html 页面 引入很多js，会导致页面加载速度过慢 -->
+<!-- <script src="../src/banner.js"></script>
+<script src="../src/tab.js"></script> -->
