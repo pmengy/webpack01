@@ -18,6 +18,12 @@ $('#swiper').css('backgroundColor', 'red')
 
 /* 1:在src同级的目录下新建一个webpack.config.js文件
 
+插件-自动生成html文件
+html-webpack-plugin插件, 让webpack打包后生成html文件并自动引入打包后的js
+1:下载插件
+2:配置插件
+
+
 
 
 
