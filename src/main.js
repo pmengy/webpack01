@@ -7,6 +7,8 @@ import $ from "jquery";
 
 // index.js
 import imgUrl from './assets/1.gif';
+// 引入字体图标文件
+import './assets/fonts/iconfont.css'
 
 let img = document.createElement('img');
 img.src = imgUrl;
@@ -16,3 +18,9 @@ import imgErl from './assets/1.gif'
 const theImg = document.createElement("theImg")
 theImg.src = imgErl
 document.body.appendChild(theImg)
+
+class App {
+    static a = 123
+  }
+  
+  console.log(App.a)
