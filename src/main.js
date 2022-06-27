@@ -13,9 +13,16 @@ import $ from 'jquery'
 // <!-- 需求1：在基本使用的例子中，引入jq,利用jq 给轮播图div添加给背景颜色 -->
 $('#swiper').css('backgroundColor', 'red')
     // 引入css文件
-    // import './styles/index.css'
-    // 引入less文件
-import './styles/index.less'
+import './styles/index.css'
+// index.js
+import imgUrl from './assets/assets/1.gif';
+// 引入字体图标文件
+import './assets/fonts/iconfont.css'
+let img = document.createElement('img');
+img.src = imgUrl;
+document.body.appendChild(img);
+// 引入less文件
+// import './styles/index.less'
 
 // 需求2：设置webpack-入口和出口
 
@@ -34,6 +41,7 @@ html-webpack-plugin插件, 让webpack打包后生成html文件并自动引入打
 需求6：加载器 - 处理css文件问题
 1:下载插件
 2:配置插件
+
 
 
 
