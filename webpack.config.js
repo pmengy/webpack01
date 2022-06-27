@@ -36,43 +36,30 @@ module.exports = {
         // style-loader 在把css代码插入到 dom中
         use: ['style-loader', 'css-loader', 'less-loader'],
       },
-      // webpack 4
-      // {
-      //   test: /\.(png|jpg|gif)$/i,
-      //   use: [
-      //     {
-      //       loader: 'url-loader', // 匹配文件, 尝试转base64字符串打包到js中
-      //       // 配置limit, 超过8k, 不转, file-loader复制, 随机名, 输出文件
-      //       options: {
-      //         limit: 8 * 1024,
-      //       },
-      //     },
-      //   ],
-      // },
 
       // 图片文件的配置(仅适用于webpack5版本)
-      //   {
-      //     test: /\.(png|jpg|gif|jpeg)$/i,
-      //     // 如果你设置的是asset模式
-      //     // 以8KB大小区分图片文件
-      //     // 小于8KB的, 把图片文件转base64, 打包进js中
-      //     // 大于8KB的, 直接把图片文件输出到dist下
+      {
+        test: /\.(png|jpg|gif|jpeg)$/i,
+        // 如果你设置的是asset模式
+        // 以8KB大小区分图片文件
+        // 小于8KB的, 把图片文件转base64, 打包进js中
+        // 大于8KB的, 直接把图片文件输出到dist下
 
-      //     // type: 'asset/resource' // 发送一个单独的文件并导出 URL
-      //     // type: 'asset/inline' // 导出一个资源的 data URI
-      //     type: 'asset',
-      //     parser: {
-      //       dataUrlCondition: {
-      //         maxSize: 8 * 1024,
-      //       },
-      //     },
-      //     generator: {
-      //       // 生成器
-      //       filename: '[hash:6][ext]',
-      //       // [hash:6] 取哈希值前6位
-      //       // ext 文件拓展名
-      //     },
-      //   },
+        // type: 'asset/resource' // 发送一个单独的文件并导出 URL
+        // type: 'asset/inline' // 导出一个资源的 data URI
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 8 * 1024,
+          },
+        },
+        generator: {
+          // 生成器
+          filename: '[hash:6][ext]',
+          // [hash:6] 取哈希值前6位
+          // ext 文件拓展名
+        },
+      },
 
       //   {
       //     // webpack5默认内部不认识这些文件, 所以当做静态资源直接输出即可
