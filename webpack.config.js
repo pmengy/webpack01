@@ -23,5 +23,9 @@ module.exports = {
         }),
         new CleanWebpackPlugin() // 删除的是ouput path 里配置的那个输出文件的文件夹
         // 默认情况下dist
-    ]
+    ],
+    devServer: {
+        port: 3000, //设置自定义 端口号
+        open: true //设置自动打开页面
+    }
 }

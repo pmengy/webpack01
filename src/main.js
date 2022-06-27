@@ -24,6 +24,9 @@ html-webpack-plugin插件, 让webpack打包后生成html文件并自动引入打
 需求4：插件-自动清除dist目录内容(clean-webpack-plugin)
 1:下载插件
 2:配置插件
+3:webpack-dev-server插件的使用(自动启动服务)
+1:下载插件
+2:配置插件
 
 
 
