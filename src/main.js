@@ -10,4 +10,16 @@ import $ from 'jquery';
 // $('#swiper').css('background-color', 'pink')
 
 import './style/index.css'
-// import './style/index.less';
+import './style/index.less';
+
+// index.js
+import imgUrl from './assets/1.gif';
+const img = document.createElement('img');
+img.src = imgUrl;
+document.body.appendChild(img);
+
+// 引入图片-使用
+import imgUrl1 from './assets/logo_small.png'
+const theImg = document.createElement('img')
+theImg.src = imgUrl1
+document.body.appendChild(theImg)
