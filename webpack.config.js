@@ -1,6 +1,7 @@
 const path = require('path');
 // 引入自动生成 html 的插件
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -18,6 +19,7 @@ module.exports = {
       filename: 'index.html', // 生成文件的名称
     }),
     // new CleanWebpackPlugin(),
+    new VueLoaderPlugin(),
   ],
   // webpack-dev-server 配置
   devServer: {
@@ -26,7 +28,10 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] }, // 匹配所有的css文件
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      }, // 匹配所有的css文件
       {
         test: /\.less$/, // 匹配执行类型的文件
         // 使用less-loader, 让webpack处理less文件, 内置还会用less翻译less代码成css内容
@@ -61,33 +66,36 @@ module.exports = {
         },
       },
 
-      //   {
-      //     // webpack5默认内部不认识这些文件, 所以当做静态资源直接输出即可
-      //     test: /\.(eot|svg|ttf|woff|woff2)$/,
-      //     type: 'asset/resource',
-      //     generator: {
-      //       filename: 'font-[name].[hash:6][ext]',
-      //     },
-      //     parser: {
-      //       // 解析器 规则
-      //       dataUrlCondition: {
-      //         // dataUrl的情况
-      //         maxSize: 1 * 1024,
-      //         // maxSize 限制最大值
-      //       },
-      //     },
-      //   },
+      {
+        // webpack5默认内部不认识这些文件, 所以当做静态资源直接输出即可
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'font-[name].[hash:6][ext]',
+        },
+        parser: {
+          // 解析器 规则
+          dataUrlCondition: {
+            // dataUrl的情况
+            maxSize: 4 * 1024,
+            // maxSize 限制最大值
+          },
+        },
+      },
 
-      //   {
-      //     test: /\.js$/,
-      //     exclude: /(node_modules)/,
-      //     use: {
-      //       loader: 'babel-loader',
-      //       options: {
-      //         presets: ['@babel/preset-env'], // 预设:转码规则(用bable开发环境本来预设的)
-      //       },
-      //     },
-      //   },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'], // 预设:转码规则(用bable开发环境本来预设的)
+          },
+        },
+      },
+
+      // 配置vue-loader
+      { test: /\.vue$/, use: ['vue-loader'] },
     ],
   },
 };

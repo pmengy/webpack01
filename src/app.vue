@@ -1,11 +1,13 @@
-// App.vue
-
 <template>
-  <div>App</div>
+   <div>App</div>
+  
 </template>
-
 <script>
-export default {};
+export default {
+ 
+};
 </script>
+<style>
+</style>
 
-<style></style>
+
