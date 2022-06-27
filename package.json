@@ -5,13 +5,14 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "serve": "webpack serve"
+    "serve": "webpack serve --port 8083 --open"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
   },
   "repository": "git@github.com:pmengy/webpack01.git",
   "author": "heimawl <1785969728@qq.com>",

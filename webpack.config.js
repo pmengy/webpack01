@@ -18,4 +18,8 @@ module.exports = {
       filename: "index.html", // 生成文件的名称
     }),
   ],
+  devServer: {
+    port: 3000, // 端口号
+    open: true
+  },
 };
