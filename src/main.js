@@ -9,4 +9,5 @@ import './tabs.js'
 import $ from 'jquery';
 $('#swiper').css('background-color', 'pink')
 
-import './style/index.css'
+// import './style/index.css'
+import './style/index.less';
