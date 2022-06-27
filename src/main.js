@@ -1,6 +1,18 @@
 import "./banner.js";
 import "./tabs.js";
 import './styles/index.css'
-import './styles/index.less';
+// import './styles/index.less';
 import $ from "jquery";
 // $("#swiper").css("background-color", "red");
+
+// index.js
+import imgUrl from './assets/1.gif';
+
+let img = document.createElement('img');
+img.src = imgUrl;
+document.body.appendChild(img);
+// 再次引入图片-使用
+import imgErl from './assets/1.gif'
+const theImg = document.createElement("theImg")
+theImg.src = imgErl
+document.body.appendChild(theImg)
