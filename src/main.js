@@ -13,7 +13,10 @@ import $ from 'jquery'
 // <!-- 需求1：在基本使用的例子中，引入jq,利用jq 给轮播图div添加给背景颜色 -->
 $('#swiper').css('backgroundColor', 'red')
     // 引入css文件
-import './styles/index.css'
+    // import './styles/index.css'
+    // 引入less文件
+import './styles/index.less'
+
 // 需求2：设置webpack-入口和出口
 
 /* 1:在src同级的目录下新建一个webpack.config.js文件
