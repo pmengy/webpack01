@@ -9,7 +9,6 @@
 import './banner'
 import './tab'
 // 引入jquery.js中暴露的对象$/jquery
-
 import $ from 'jquery'
 // <!-- 需求1：在基本使用的例子中，引入jq,利用jq 给轮播图div添加给背景颜色 -->
 $('#swiper').css('backgroundColor', 'red')
@@ -18,8 +17,11 @@ $('#swiper').css('backgroundColor', 'red')
 
 /* 1:在src同级的目录下新建一个webpack.config.js文件
 
-插件-自动生成html文件
+需求3：插件-自动生成html文件
 html-webpack-plugin插件, 让webpack打包后生成html文件并自动引入打包后的js
+1:下载插件
+2:配置插件
+需求4：插件-自动清除dist目录内容(clean-webpack-plugin)
 1:下载插件
 2:配置插件
 
