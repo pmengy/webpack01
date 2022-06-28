@@ -1,5 +1,8 @@
-// import Vue from 'vue';
-import './app.vue';
+// import { creatApp } from 'vue';
+// import App from ('./app.vue');
+// const app = creatApp(App)
+// app.mount('#app')
+import './app.vue'
 // new Vue({
 //   el: '#app',
 //   template: '<App/>',
